@@ -10,5 +10,22 @@
   <p>There are no products yet.</p>
 <% end %>
 
+<% if Product.three_most_recent.any? %>
+  <h2>Newest additions</h2>
+  <ul>
+    <% Product.three_most_recent.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if Product.most_reviews.any? %>
+  <h2>Our most reviewed product:</h2>
+  <ul>
+    <% Product.three_most_recent.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <p><%= link_to "Create new product", new_product_path %></p>
