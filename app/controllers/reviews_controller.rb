@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   def new
     @product = Product.find(params[:product_id])
-    @reviews = @product.reviewss.new
+    @review = @product.reviews.new
     render :new
   end
 
