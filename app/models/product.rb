@@ -12,6 +12,7 @@ class Product < ApplicationRecord
     .group("products.id")
     .order("reviews_count DESC")
     .limit(1)
+    .first
   )}
   scope :usa, -> { where(country_of_origin: "USA") }
 
