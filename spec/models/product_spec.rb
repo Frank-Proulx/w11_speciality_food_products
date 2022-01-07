@@ -36,9 +36,14 @@ describe Product do
     end
   end
 
-  # describe ('.usa') do
-  #   it("returns products with a country of origin matching USA") do
-  #   expect(Product.three_most_recent).to(eq())
-  #   end
-  # end
+  describe ('.usa') do
+    it("returns products with a country of origin matching USA") do
+      product1 = Product.create(name: "peppers", cost: 12, country_of_origin: "France")
+      product2 = Product.create(name: "grapes", cost: 13, country_of_origin: "USA")
+      product3 = Product.create(name: "tomatoes", cost: 1, country_of_origin: "USA")
+      product4 = Product.create(name: "lettuce", cost: 14, country_of_origin: "Russia")
+      product5 = Product.create(name: "peanut butter", cost: 7, country_of_origin: "Cameroon")
+      expect(Product.usa).to(eq([product2, product3]))
+    end
+  end
 end
