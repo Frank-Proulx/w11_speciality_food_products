@@ -10,7 +10,7 @@
 <% if Product.most_reviews.any? %>
   <h2>Our most reviewed product:</h2>
   <ul>
-    <% Product.three_most_recent.each do |product| %>
+    <% Product.most_reviews.each do |product| %>
       <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
