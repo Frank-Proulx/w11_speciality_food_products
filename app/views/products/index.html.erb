@@ -7,12 +7,10 @@
   </ul>
 <% end %>
 
-<% if Product.most_reviews.any? %>
+<% if Product.most_reviews %>
   <h2>Our most reviewed product:</h2>
   <ul>
-    <% Product.most_reviews.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
+    <li><%= link_to Product.most_reviews.name, product_path(Product.most_reviews) %></li>
   </ul>
 <% end %>
 
@@ -25,16 +23,16 @@
   </ul>
 <% end %>
 
+<p><%= link_to "Add new product", new_product_path %></p>
+
 <h1>All Products</h1>
 
 <% if @products.any? %>
-  <ul>
-    <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
+<ul>
+<% @products.each do |product| %>
+  <li><%= link_to product.name, product_path(product) %></li>
+  <% end %>
   </ul>
-<% else %>
+  <% else %>
   <p>There are no products yet.</p>
-<% end %>
-
-<p><%= link_to "Create new product", new_product_path %></p>
+  <% end %>
