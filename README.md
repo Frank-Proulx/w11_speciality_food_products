@@ -1,24 +1,62 @@
-# README
+# Mario's Speciality Food Products
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### A website allowing the user to add products and also add reviews for each product.
 
-Things you may want to cover:
+#### Created By: **Frank Proulx**
 
-* Ruby version
 
-* System dependencies
+## Technologies Used
 
-* Configuration
+* _Ruby_
+* _Gems_
+* _Bundler_
+* _RSpec_
+* _shoulda matchers_
+* _IRB_
+* _Pry_
+* _Capybara_
+* _Postgres_
+* _SQL_
+* _SQL Designer_
+* _Rails_
+* _ActiveRecord_
+* _Bootstrap scss_
+* _faker_
 
-* Database creation
 
-* Database initialization
+## Description
 
-* How to run the test suite
+_This project was created to show proficiency in Rails with Active Record. The application is for a website that lists products and adds reviews for individual products. The user can add/remove/edit products and reviews._
 
-* Services (job queues, cache servers, search engines, etc.)
+## Database Schema
 
-* Deployment instructions
+![image_of_database_schema](./public/speciality_food_products_db_schema.png)
 
-* ...
+## System Requirements
+
+* Ruby v2.6.5 recommended
+* Postgres 12.9  
+_(Note: Ruby gem dependencies will be installed automatically by Bundler.)_
+
+## Setup/Installation Requirements
+
+* Clone the GitHub repository: [https://github.com/Frank-Proulx/w11_speciality_food_products](https://github.com/Frank-Proulx/w11_speciality_food_products)
+* From the main project directory, enter `bundle install` in the terminal to populate gems.
+* To create a database, type in your terminal: 
+      `rake db:setup`
+* Enter `rspec` into the terminal to confirm passing of all tests.
+* Run `rails s` to start the Rails server.
+* Open browswer and enter the url http://localhost:3000/ unless otherwise prompted in the terminal.
+
+## Known Bugs
+
+* _No known bugs._
+
+## License
+
+_[MIT](https://opensource.org/licenses/MIT)_
+
+If you have any issues, questions, ideas or concerns, please reach out to me at my email and/or make a contribution to the code via GitHub.
+
+Copyright (c) _2022_ _Frank Proulx_
+
