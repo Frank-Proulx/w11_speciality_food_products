@@ -10,16 +10,18 @@
   </head>
 
   <body>
+    <div class="container">
+      <% if current_user %>
+        <%= current_user.email %> | <%= link_to "Sign Out", '/users/sign_out', :method => :delete %>
+      <% else %>
+        <%= link_to "Sign Up", '/users/sign_up' %> | <%= link_to "Sign In", '/users/sign_in' %>
+      <% end %>
+  
+    
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
 
-    <% if current_user %>
-      <%= current_user.email %> | <%= link_to "Sign Out", '/users/sign_out', :method => :delete %>
-    <% else %>
-      <%= link_to "Sign Up", '/users/sign_up' %> | <%= link_to "Sign In", '/users/sign_in' %>
-    <% end %>
-
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
-
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -7,6 +7,9 @@
 
 ## Technologies Used
 
+* _HTML_
+* _CSS_
+* _Bootstrap_ 
 * _Ruby_
 * _Gems_
 * _Bundler_
