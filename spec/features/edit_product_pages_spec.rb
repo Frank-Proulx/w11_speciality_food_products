@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the update a product process as an admin" do
-  it "updates a product as an admin" do
+  before :each do
     user = User.create({email: 'example@email.com', password: 'testing', admin: true})
     visit '/'
     click_link 'Sign In'
@@ -13,6 +13,9 @@ describe "the update a product process as an admin" do
     fill_in 'Cost', :with => '5'
     fill_in 'Country of origin', :with => 'France'
     click_on 'Create Product'
+  end
+
+  it "updates a product as an admin" do
     click_on 'Fancy Peppers'
     click_on 'Edit'
     fill_in 'Name', :with => 'Green Peppers'
@@ -22,6 +25,16 @@ describe "the update a product process as an admin" do
     expect(page).to have_content 'Product successfully updated!'
     expect(page).to have_content 'Green Peppers'
     expect(page).to have_no_content 'Fancy Peppers'
+  end
+
+  it "tests the flash message for when a product fails to update" do
+    click_on 'Fancy Peppers'
+    click_on 'Edit'
+    fill_in 'Name', :with => ''
+    fill_in 'Cost', :with => ''
+    fill_in 'Country of origin', :with => ''
+    click_on 'Update Product'
+    expect(page).to have_content 'Failed to update product.'
   end
 end
 

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the update a review process as an admin" do
-  it "updates a review as an admin" do
+  before :each do
     user = User.create({email: 'example@email.com', password: 'testing', admin: true})
     visit '/'
     click_link 'Sign In'
@@ -19,6 +19,9 @@ describe "the update a review process as an admin" do
     fill_in 'Content body', :with => 'blalsjdf sdkjhl lkajshdf laksdj kljashdfl hasldkjfh alskdjfhalsdjkfh alskdjhflaksdjhf'
     fill_in 'Rating', :with => '4'
     click_on 'Create Review'
+  end
+  
+  it "updates a review as an admin" do
     click_link 'Mike Tyson'
     click_on 'Edit review'
     fill_in 'Author', :with => 'Bernie Sanders'
@@ -28,6 +31,16 @@ describe "the update a review process as an admin" do
     expect(page).to have_content 'Review successfully updated!'
     expect(page).to have_content 'Bernie Sanders'
     expect(page).to have_no_content 'Mike Tyson'
+  end
+
+  it "tests the flash message for when a review fails to update" do
+    click_link 'Mike Tyson'
+    click_on 'Edit review'
+    fill_in 'Author', :with => ''
+    fill_in 'Content body', :with => ''
+    fill_in 'Rating', :with => ''
+    click_on 'Update Review'
+    expect(page).to have_content 'Failed to update review.'
   end
 end
 
