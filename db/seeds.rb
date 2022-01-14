@@ -8,6 +8,7 @@
 
 Product.destroy_all
 Review.destroy_all
+User.destroy_all
 
 50.times do |index|
   product = Product.create!({name: Faker::Food.ingredient, cost: Faker::Number.between(from: 1, to: 100), country_of_origin: Faker::Address.country})
@@ -16,5 +17,14 @@ Review.destroy_all
   end
 end
 
+1.times do |index|
+  user = User.create({email: 'admin@email.com', password: 'testing', admin: true})
+end
+
+1.times do |index|
+  user = User.create({email: 'user@email.com', password: 'testing'})
+end
+
+p "Created #{User.count} users"
 p "Created #{Product.count} products"
 p "Created #{Review.count} reviews"
