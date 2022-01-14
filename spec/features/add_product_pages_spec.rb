@@ -62,3 +62,12 @@ describe "the add a product process as an admin" do
     expect(page).to have_content "Country of origin can't be blank"
   end
 end
+
+describe "the add a product process as a non admin user" do
+  it "confirms a non user can't add a product" do
+    visit products_path
+    click_link 'Add new product'
+    expect(page).to have_content 'Log in'
+    expect(page).to have_content 'You need to sign in or sign up before continuing.'
+  end
+end
