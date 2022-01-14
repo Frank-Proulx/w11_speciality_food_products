@@ -1,4 +1,17 @@
 body {
-  background-color: lightgrey;
+  background: linear-gradient(45deg, rgb(170, 170, 170), rgb(133, 103, 103));
+  font-family: 'Times New Roman', Times, serif;
+
 }
 
+.col-4 {
+  padding-top: 75px;
+}
+
+.container-fluid {
+  width: 80%;
+}
+
+a {
+  color: lightblue;
+}
