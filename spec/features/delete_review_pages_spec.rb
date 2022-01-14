@@ -25,7 +25,7 @@ describe "the delete a review process as an admin" do
   end
 end
 
-describe "the delete a review process as a user" do
+describe "the delete a review process as a non admin user" do
   it "confirms a non admin can't delete a review" do
     user = User.create({email: 'example@email.com', password: 'testing', admin: true})
     visit '/'
