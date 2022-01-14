@@ -1,6 +1,6 @@
 # Mario's Speciality Food Products
 
-#### A website allowing the user to add products and also add reviews for each product.
+#### A website that uses authentication, and allows the user to add products and also add reviews for each product. 
 
 #### Created By: **Frank Proulx**
 
@@ -15,18 +15,20 @@
 * _IRB_
 * _Pry_
 * _Capybara_
+* _SimpleCov_
+* _Devise_
 * _Postgres_
 * _SQL_
 * _SQL Designer_
 * _Rails_
 * _ActiveRecord_
 * _Bootstrap scss_
-* _faker_
+* _Faker_
 
 
 ## Description
 
-_This project was created to show proficiency in Rails with Active Record. The application is for a website that lists products and adds reviews for individual products. The user can add/remove/edit products and reviews._
+_This project was created to show proficiency in Rails with Active Record for both relational databases with nested routing, as well as authentication and authorization using Devise. The application is for a website that lists products and adds reviews for individual products. The user can add/remove/edit products and reviews._
 
 ## Database Schema
 
@@ -47,6 +49,7 @@ _(Note: Ruby gem dependencies will be installed automatically by Bundler.)_
 * Enter `rspec` into the terminal to confirm passing of all tests.
 * Run `rails s` to start the Rails server.
 * Open browswer and enter the url http://localhost:3000/ unless otherwise prompted in the terminal.
+* Running `rake db:setup` will seed the database with two users, one admin and one not. The login for the admin is `admin@email.com` and the login for the non-admin user is `user@email.com`, password for both is `testing`. 
 
 ## Known Bugs
 
