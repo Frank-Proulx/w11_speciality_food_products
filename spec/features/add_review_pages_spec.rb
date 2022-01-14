@@ -23,7 +23,7 @@ describe "the add a review process as a user" do
     click_on 'Log in'
   end
 
-  it "adds a new review" do
+  it "adds a new review as a user" do
     click_link 'Stinky Peppers'
     click_link 'Add a review'
     fill_in 'Author', :with => 'Mike Tyson'
