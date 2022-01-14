@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe "the update a product process" do
-  it "updates a product" do
+describe "the update a review process" do
+  it "updates a review" do
     visit products_path
     click_link 'Add new product'
     fill_in 'Name', :with => 'Fancy Peppers'
