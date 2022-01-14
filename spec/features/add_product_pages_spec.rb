@@ -1,6 +1,32 @@
 require 'rails_helper'
 
-describe "the add a product process" do
+describe "the add a product process as a non admin user" do
+  before :each do
+    user = User.create({email: 'user@email.com', password: 'testing'})
+    visit '/'
+    click_link 'Sign In'
+    fill_in 'Email', :with => 'user@email.com'
+    fill_in 'Password', :with => 'testing'
+    click_on 'Log in'
+  end
+
+  it "confirms a non admin can't add a product" do
+    visit products_path
+    click_link 'Add new product'
+    expect(page).to have_content 'All Products'
+  end
+end
+
+describe "the add a product process as an admin" do
+  before :each do
+    user = User.create({email: 'example@email.com', password: 'testing', admin: true})
+    visit '/'
+    click_link 'Sign In'
+    fill_in 'Email', :with => 'example@email.com'
+    fill_in 'Password', :with => 'testing'
+    click_on 'Log in'
+  end
+
   it "adds a new product" do
     visit products_path
     click_link 'Add new product'
