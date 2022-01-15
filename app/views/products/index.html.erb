@@ -29,19 +29,22 @@
 
     <p><%= link_to "Add new product", new_product_path %></p>
   </div>
-
-  <div class="col-4">
-  <h1>All Products</h1>
-    <% if @products.any? %>
-    <ul>
-    <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-      <% end %>
-      </ul>
-      <% else %>
-      <p>There are no products yet.</p>
-      <% end %>
+  <div class="col-1">
   </div>
-  <div class="col-2">
+  <div class="col-4">
+    <h1>All Products</h1>
+    <div class="scroller"
+      <% if @products.any? %>
+      <ul>
+      <% @products.each do |product| %>
+        <li><%= link_to product.name, product_path(product) %></li>
+        <% end %>
+        </ul>
+        <% else %>
+        <p>There are no products yet.</p>
+        <% end %>
+    </div>
+  </div>
+  <div class="col-1">
   </div>
 </div>

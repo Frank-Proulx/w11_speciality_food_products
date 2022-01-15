@@ -1,11 +1,12 @@
 body {
-  background: linear-gradient(45deg, rgb(170, 170, 170), rgb(133, 103, 103));
+  background: linear-gradient(45deg, rgb(143, 122, 122), rgb(221, 128, 128));
   font-family: 'Times New Roman', Times, serif;
-
+  height: 100vh;
+  
 }
 
 .col-4 {
-  padding-top: 75px;
+  padding-top: 80px;
 }
 
 .container-fluid {
@@ -13,5 +14,11 @@ body {
 }
 
 a {
-  color: lightblue;
+  color: rgb(210, 236, 245);
+}
+
+.scroller {
+  margin-top: 1vh;
+  height: 60vh;
+  overflow: scroll;
 }
