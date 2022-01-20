@@ -13,7 +13,7 @@ describe "the add a product process as a non admin user" do
   it "confirms a non admin can't add a product" do
     visit products_path
     click_link 'Add new product'
-    expect(page).to have_content 'All Products'
+    expect(page).to have_content 'Welcome'
   end
 end
 
@@ -63,7 +63,7 @@ describe "the add a product process as an admin" do
   end
 end
 
-describe "the add a product process as a non admin user" do
+describe "the add a product process as a non user" do
   it "confirms a non user can't add a product" do
     visit products_path
     click_link 'Add new product'

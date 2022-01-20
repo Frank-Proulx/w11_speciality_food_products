@@ -76,7 +76,7 @@ describe "the update a review process as a non admin user" do
     click_link 'Fancy Peppers'
     click_link 'Mike Tyson'
     click_on 'Edit review'
-    expect(page).to have_content 'All Products'
+    expect(page).to have_content 'Welcome'
   end
 end
 
@@ -101,6 +101,7 @@ describe "the update a review process as a non user" do
     fill_in 'Rating', :with => '4'
     click_on 'Create Review'
     click_on 'Sign Out'
+    visit products_path
     click_link 'Fancy Peppers'
     click_link 'Mike Tyson'
     click_on 'Edit review'

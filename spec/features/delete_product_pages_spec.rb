@@ -28,7 +28,7 @@ describe "the delete a product process as a non admin user" do
     visit products_path
     click_on 'Fancy Peppers'
     click_on 'Delete'
-    expect(page).to have_content 'All Products'
+    expect(page).to have_content 'Welcome'
     expect(page).to have_content 'Fancy Peppers'
   end
 end
@@ -72,6 +72,7 @@ describe "the delete a product process as a non admin user" do
     fill_in 'Country of origin', :with => 'France'
     click_on 'Create Product'
     click_on 'Sign Out'
+    visit products_path
     click_link 'Fancy Peppers'
     click_on 'Delete'
     expect(page).to have_content 'Log in'
