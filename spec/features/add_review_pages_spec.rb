@@ -21,6 +21,7 @@ describe "the add a review process as a user" do
     fill_in 'Email', :with => 'user@email.com'
     fill_in 'Password', :with => 'testing'
     click_on 'Log in'
+    visit products_path
   end
 
   it "adds a new review as a user" do
@@ -71,6 +72,7 @@ describe "the add a review process as a non admin user" do
     fill_in 'Country of origin', :with => 'France'
     click_on 'Create Product'
     click_on 'Sign Out'
+    visit products_path
     click_link 'Stinky Peppers'
     click_link 'Add a review'
     expect(page).to have_content 'Log in'

@@ -23,7 +23,6 @@ a {
   overflow: scroll;
 }
 
-.add {
-  margin-top: 20px;
-  color: grey;
+p.add {
+  margin-top: 25px;
 }

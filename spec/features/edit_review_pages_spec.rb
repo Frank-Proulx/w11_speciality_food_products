@@ -8,6 +8,7 @@ describe "the update a review process as an admin" do
     fill_in 'Email', :with => 'example@email.com'
     fill_in 'Password', :with => 'testing'
     click_on 'Log in'
+    visit products_path
     click_link 'Add new product'
     fill_in 'Name', :with => 'Fancy Peppers'
     fill_in 'Cost', :with => '5'
@@ -52,6 +53,7 @@ describe "the update a review process as a non admin user" do
     fill_in 'Email', :with => 'example@email.com'
     fill_in 'Password', :with => 'testing'
     click_on 'Log in'
+    visit products_path
     click_link 'Add new product'
     fill_in 'Name', :with => 'Fancy Peppers'
     fill_in 'Cost', :with => '5'
@@ -70,6 +72,7 @@ describe "the update a review process as a non admin user" do
     fill_in 'Email', :with => 'user@email.com'
     fill_in 'Password', :with => 'testing'
     click_on 'Log in'
+    visit products_path
     click_link 'Fancy Peppers'
     click_link 'Mike Tyson'
     click_on 'Edit review'
@@ -85,6 +88,7 @@ describe "the update a review process as a non user" do
     fill_in 'Email', :with => 'example@email.com'
     fill_in 'Password', :with => 'testing'
     click_on 'Log in'
+    visit products_path
     click_link 'Add new product'
     fill_in 'Name', :with => 'Fancy Peppers'
     fill_in 'Cost', :with => '5'

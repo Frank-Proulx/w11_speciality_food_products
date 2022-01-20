@@ -8,6 +8,7 @@ describe "the delete a product process as a non admin user" do
     fill_in 'Email', :with => 'example@email.com'
     fill_in 'Password', :with => 'testing'
     click_on 'Log in'
+    visit products_path
     click_link 'Add new product'
     fill_in 'Name', :with => 'Fancy Peppers'
     fill_in 'Cost', :with => '5'
@@ -20,6 +21,7 @@ describe "the delete a product process as a non admin user" do
     fill_in 'Email', :with => 'user@email.com'
     fill_in 'Password', :with => 'testing'
     click_on 'Log in'
+    visit products_path
   end
 
   it "confirms a non-admin user can't delete a product" do
@@ -39,6 +41,7 @@ describe "the delete a product process as an admin" do
     fill_in 'Email', :with => 'example@email.com'
     fill_in 'Password', :with => 'testing'
     click_on 'Log in'
+    visit products_path
   end
 
   it "deletes a product" do
@@ -62,6 +65,7 @@ describe "the delete a product process as a non admin user" do
     fill_in 'Email', :with => 'example@email.com'
     fill_in 'Password', :with => 'testing'
     click_on 'Log in'
+    visit products_path
     click_link 'Add new product'
     fill_in 'Name', :with => 'Fancy Peppers'
     fill_in 'Cost', :with => '5'
