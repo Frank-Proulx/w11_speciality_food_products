@@ -8,6 +8,11 @@ class ProductsController < ApplicationController
     render :index
   end
 
+  def landing
+    @products = Product.all
+    render :landing
+  end
+
   def new
     @product = Product.new
     render :new

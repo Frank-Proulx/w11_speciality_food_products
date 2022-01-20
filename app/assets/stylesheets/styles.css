@@ -22,3 +22,8 @@ a {
   height: 60vh;
   overflow: scroll;
 }
+
+.add {
+  margin-top: 20px;
+  color: grey;
+}
