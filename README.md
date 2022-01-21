@@ -56,7 +56,7 @@ _(Note: Ruby gem dependencies will be installed automatically by Bundler.)_
 
 ## Known Bugs
 
-* The rspec command was causing an error saying the versions were off. Typing `bundle exec` before `rspec` solves this issue. I was also able to solve this permanantly by changing the version of rspec-expectations in `Gemfile.lock` from (3.10.1) to (3.10.2).  
+* The rspec command was causing an error saying the versions were off. Typing `bundle exec rspec` instead solves this issue. I was also able to solve this permanantly by changing the version of rspec-expectations in `Gemfile.lock` from (3.10.1) to (3.10.2).  
 
 ## License
 
