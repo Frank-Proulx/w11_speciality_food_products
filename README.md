@@ -49,14 +49,14 @@ _(Note: Ruby gem dependencies will be installed automatically by Bundler.)_
 * From the main project directory, enter `bundle install` in the terminal to populate gems.
 * To create a database, type in your terminal: 
       `rake db:setup`
-* Enter `rspec` into the terminal to confirm passing of all tests.
+* Enter `rspec` into the terminal to confirm passing of all tests (see notes in known bugs if this is causing an error).
 * Run `rails s` to start the Rails server.
 * Open browswer and enter the url http://localhost:3000/ unless otherwise prompted in the terminal.
 * Running `rake db:setup` will seed the database with two users, one admin and one not. The login for the admin is `admin@email.com` and the login for the non-admin user is `user@email.com`, password for both is `testing`. 
 
 ## Known Bugs
 
-* _No known bugs._
+* The rspec command was causing an error saying the versions were off. Typing `bundle exec` before `rspec` solves this issue. I was also able to solve this permanantly by changing the version of rspec-expectations in `Gemfile.lock` from (3.10.1) to (3.10.2).  
 
 ## License
 
