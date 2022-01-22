@@ -6,7 +6,7 @@
   <h2>Newest additions:</h2>
   <ul>
     <% Product.three_most_recent.each do |product| %>
-      <li><%= product.name %></li>
+      <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
 <% end %>
@@ -14,7 +14,7 @@
 <% if Product.most_reviews %>
   <h2>Our most reviewed product:</h2>
   <ul>
-    <li><%= Product.most_reviews.name %></li>
+    <li><%= link_to Product.most_reviews.name, product_path(Product.most_reviews) %></li>
   </ul>
 <% end %>
 
@@ -22,7 +22,7 @@
   <h2>Made in the USA:</h2>
   <ul>
     <% Product.usa.each do |product| %>
-      <li><%= product.name %></li>
+      <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
 <% end %>
