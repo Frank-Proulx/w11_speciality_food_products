@@ -63,7 +63,8 @@ describe "the update a product process as a non admin user" do
     visit products_path
     click_on 'Fancy Peppers'
     click_on 'Edit'
-    expect(page).to have_content 'Welcome'
+    expect(page).to have_content 'All Products'
+    expect(page).to have_content 'You must be an admin to perform this action.'
   end
 end
 

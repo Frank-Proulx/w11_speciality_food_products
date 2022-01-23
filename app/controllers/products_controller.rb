@@ -1,6 +1,9 @@
 class ProductsController < ApplicationController
   before_action :only => [:new, :edit, :destroy] do
-    redirect_to new_user_session_path unless current_user && current_user.admin
+    if !current_user.admin
+      flash[:alert] = "You must be an admin to perform this action."
+    end
+    redirect_to products_path unless current_user && current_user.admin
   end
 
   def index
