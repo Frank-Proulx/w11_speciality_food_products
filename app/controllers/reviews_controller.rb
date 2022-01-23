@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
     if !current_user.admin
       flash[:alert] = "You must be an admin to perform this action."
     end
-    redirect_to product_review_path() unless current_user && current_user.admin
+    redirect_to product_review_path(Product.find(params[:product_id]), Review.find(params[:id])) unless current_user && current_user.admin
   end
 
   def new

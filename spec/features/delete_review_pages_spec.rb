@@ -57,8 +57,7 @@ describe "the delete a review process as a non admin user" do
     click_link 'Fancy Peppers'
     click_link 'Mike Tyson'
     click_on 'Delete review'
-    visit products_path
-    click_link 'Fancy Peppers'
+    expect(page).to have_content 'You must be an admin to perform this action.'
     expect(page).to have_content 'Mike Tyson'
   end
 end
